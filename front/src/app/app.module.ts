@@ -1,25 +1,26 @@
 import { NgModule }      from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
 import { HighlightDirective }   from './directive/hightlight';
 import { TitleComponent }   from './component/component.title';
 import { UserService } from './service/service.user';
-import { ContactService } from './contact/contact.service';
-import {ContactComponent} from './contact/contact.component';
-import { AwesomePipe } from './contact/awesome.pipe';
-import {HighlightDirective as ContactHighlightDirective} from './contact/highlight.directive';
+import {APP_BASE_HREF} from '@angular/common';
+
+
+/* Contact Imports */
+import{ ContactModule }      from './contact/contact.module';
+
+/* Routing Module */
+import { AppRoutingModule }   from './app-routing.module';
 
 @NgModule({
-  imports:      [ BrowserModule,FormsModule ],
+  imports:      [ BrowserModule, ContactModule,AppRoutingModule],
   declarations: [ AppComponent,
     HighlightDirective,
-    TitleComponent,
-    AwesomePipe,
-    ContactComponent,
-    ContactHighlightDirective
-                    ],
-  providers: [ UserService, ContactService ],
+    TitleComponent
+   ],
+  providers: [ UserService, {provide: APP_BASE_HREF, useValue : '/tuno/' }],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
