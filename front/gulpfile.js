@@ -18,7 +18,7 @@ var PATHS = {
         css: 'src/**/*.css'
     },
     lib: [
-        'node_modules/*(@angular|angular2-in-memory-web-api|zone.js|reflect-metadata|rxjs|systemjs)/**/*.*',
+        'node_modules/*(@angular|angular2-in-memory-web-api|zone.js|reflect-metadata|rxjs|systemjs|hammerjs)/**/*.*',
 		'node_modules/*(core-js)/client/*.*',
         'bower_components/**/*',
     ]
